@@ -1,0 +1,46 @@
+---
+import "../global.css";
+
+type Props = {
+  title?: string | undefined;
+  description?: string | undefined;
+};
+
+const {
+  title = "Frontend Hire: Free Portfolio Template",
+  description = "A free template that you can use to build your portfolio in minutes.",
+} = Astro.props;
+---
+
+<meta charset='UTF-8' />
+<meta name='description' property='og:description' content={description} />
+<meta name='viewport' content='width=device-width' />
+<meta name='generator' content={Astro.generator} />
+<title>{title}</title>
+
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+<script is:inline>
+  // This code is inlined in the head to make dark mode instant & blocking.
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+
+  if (typeof localStorage !== "undefined") {
+    // Watch the document element and persist user preference when it changes.
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("theme-dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
