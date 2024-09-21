@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 0deg 0% 0%;
+    --color-secondary: 0deg 0% 24%;
+
+    --color-hover: 0deg 0% 97%;
+  }
+}
