@@ -1,0 +1,22 @@
+---
+import ExternalLink from "./ExternalLink.astro";
+
+type Props = {
+  url: string;
+  name: string;
+  time: string;
+  description?: string;
+};
+
+const { url, name, time, description = "" } = Astro.props;
+---
+
+<div class='flex flex-col gap-1 rounded p-1 hover:bg-hover'>
+  <h2><ExternalLink url={url}>{name}</ExternalLink></h2>
+  <small class='text-sm text-secondary'>{time}</small>
+  {
+    description.trim() && (
+      <p class='text-sm text-secondary'>{description.trim()}</p>
+    )
+  }
+</div>

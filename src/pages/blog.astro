@@ -1,5 +1,5 @@
 ---
-import ExperienceCard from "../components/ExperienceCard.astro";
+import BlogCard from "../components/BlogCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_CONFIG } from "../site-config";
 ---
@@ -9,7 +9,7 @@ import { SITE_CONFIG } from "../site-config";
     {
       SITE_CONFIG.timeline.map((experience) => (
         <li>
-          <ExperienceCard
+          <BlogCard
             name={experience.name}
             url={experience.url}
             description={experience.description}
