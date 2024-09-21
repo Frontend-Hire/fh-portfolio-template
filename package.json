@@ -2,6 +2,11 @@
   "name": "fh-portfolio-template",
   "type": "module",
   "version": "0.0.1",
+  "author": {
+    "name": "Hruthik Reddy",
+    "url": "https://github.com/yaralahruthik"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -17,6 +22,8 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.1",
     "astro": "^4.15.8",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.12",
     "typescript": "^5.6.2"
   },

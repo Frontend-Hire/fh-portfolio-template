@@ -1,13 +1,20 @@
 ---
+import { cn } from "../utils";
+
 type Props = {
   url: string;
 };
 
 const { url } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <a
-  class='font-medium text-secondary decoration-secondary underline-offset-4 transition-all hover:underline'
+  class={cn(
+    "font-medium text-secondary decoration-secondary underline-offset-4 transition-all hover:underline",
+    currentPath === url ? "underline" : "",
+  )}
   href={url}
 >
   <slot />

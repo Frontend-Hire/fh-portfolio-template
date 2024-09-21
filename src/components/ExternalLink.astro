@@ -1,0 +1,11 @@
+---
+type Props = {
+  url: string;
+};
+
+const { url } = Astro.props;
+---
+
+<a target='_blank' class='underline underline-offset-4' href={url}>
+  <slot />
+</a>

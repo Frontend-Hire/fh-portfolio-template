@@ -1,0 +1,17 @@
+---
+import ExternalLink from "../components/ExternalLink.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_CONFIG } from "../site-config";
+---
+
+<BaseLayout>
+  <ul class='flex flex-col gap-5'>
+    {
+      SITE_CONFIG.contact.map((contact) => (
+        <li>
+          <ExternalLink url={contact.url}>{contact.name}</ExternalLink>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
