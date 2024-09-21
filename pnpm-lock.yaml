@@ -19,6 +19,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      slugify:
+        specifier: ^1.6.6
+        version: 1.6.6
       tailwind-merge:
         specifier: ^2.5.2
         version: 2.5.2
@@ -3313,6 +3316,13 @@ packages:
       }
     engines: { node: ">=18" }
 
+  slugify@1.6.6:
+    resolution:
+      {
+        integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==,
+      }
+    engines: { node: ">=8.0.0" }
+
   source-map-js@1.2.1:
     resolution:
       {
@@ -6155,6 +6165,8 @@ snapshots:
     dependencies:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 5.0.0
+
+  slugify@1.6.6: {}
 
   source-map-js@1.2.1: {}
 

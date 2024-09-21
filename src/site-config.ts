@@ -1,4 +1,7 @@
 type SiteConfig = {
+  name: string;
+  headlineOne: string;
+  headlineTwo?: string;
   timeline: {
     name: string;
     url: string;
@@ -12,6 +15,9 @@ type SiteConfig = {
 };
 
 export const SITE_CONFIG: SiteConfig = {
+  name: "Hruthik Reddy",
+  headlineOne: "Mostly a Software Engineer.",
+  headlineTwo: "Sometimes a Nature Photographer.",
   timeline: [
     {
       name: "withYHR",

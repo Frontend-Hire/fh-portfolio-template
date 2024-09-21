@@ -1,12 +1,13 @@
 ---
+import { SITE_CONFIG } from "../site-config";
 import Navigation from "./Navigation.astro";
 ---
 
 <header class='flex flex-col gap-8'>
   <div>
-    <a class='font-bold' href='/'>Hruthik Reddy</a>
-    <p>Mostly a Software Engineer.</p>
-    <p>Sometimes a Nature Photographer.</p>
+    <a class='font-bold' href='/'>{SITE_CONFIG.name}</a>
+    <p>{SITE_CONFIG.headlineOne}</p>
+    {SITE_CONFIG.headlineTwo && <p>{SITE_CONFIG.headlineTwo}</p>}
   </div>
   <Navigation />
 </header>

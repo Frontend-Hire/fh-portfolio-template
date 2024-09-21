@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "../../components/BlogCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getSlug } from "../../utils";
+
+const allBlogPosts = await getCollection("blog");
+
+const sortedPosts = allBlogPosts
+  .filter((post) => post.data.isDraft !== true)
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).valueOf() -
+      new Date(a.data.publishDate).valueOf(),
+  );
+---
+
+<BaseLayout>
+  <ul class='flex flex-col gap-5'>
+    {
+      sortedPosts.map((post) => {
+        const formattedDate = new Date(
+          post.data.publishDate,
+        ).toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        return (
+          <li>
+            <BlogCard
+              name={post.data.title}
+              url={`/blog/${getSlug(post.data.title)}/`}
+              description={post.data.description}
+              time={formattedDate}
+            />
+          </li>
+        );
+      })
+    }
+  </ul>
+</BaseLayout>
