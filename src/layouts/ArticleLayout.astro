@@ -14,7 +14,7 @@ const formattedDate = new Date(publishDate).toLocaleDateString("en-us", {
 });
 ---
 
-<article class='prose p-1'>
+<article class='prose'>
   <h1 class='mb-1 text-2xl'>{title}</h1>
   <time class='m-0 text-sm text-secondary'>{formattedDate}</time>
   {description.trim() && <p>{description.trim()}</p>}
