@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { getSlug } from "../../../utils";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 
 export const prerender = true;
 
@@ -18,32 +19,13 @@ export async function getStaticPaths() {
 
 const { learning } = Astro.props;
 const { Content } = await learning.render();
-
-const formattedDate = new Date(learning.data.publishDate).toLocaleDateString(
-  "en-us",
-  {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  },
-);
 ---
 
 <BaseLayout>
-  <article class='flex flex-col gap-5 p-1'>
-    <div class='flex flex-col gap-1'>
-      <h1>{learning.data.title}</h1>
-      <small class='text-sm text-secondary'>{formattedDate}</small>
-      {
-        learning.data.description?.trim() && (
-          <p class='text-sm text-secondary'>
-            {learning.data.description.trim()}
-          </p>
-        )
-      }
-    </div>
-    <div class='prose'>
-      <Content />
-    </div>
-  </article>
+  <ArticleLayout
+    title={learning.data.title}
+    publishDate={learning.data.publishDate}
+  >
+    <Content />
+  </ArticleLayout>
 </BaseLayout>

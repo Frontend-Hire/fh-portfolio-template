@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleCard from "../../components/ArticleCard.astro";
+import LearningsCard from "../../components/LearningsCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getSlug } from "../../utils";
 
@@ -29,10 +29,9 @@ const sortedLearnings = allLearnings
 
         return (
           <li>
-            <ArticleCard
+            <LearningsCard
               name={learning.data.title}
               url={`/learnings/${getSlug(learning.data.title)}/`}
-              description={learning.data.description}
               time={formattedDate}
             />
           </li>

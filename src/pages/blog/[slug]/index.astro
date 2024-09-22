@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { getSlug } from "../../../utils";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 
 export const prerender = true;
 
@@ -18,30 +19,14 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-
-const formattedDate = new Date(post.data.publishDate).toLocaleDateString(
-  "en-us",
-  {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  },
-);
 ---
 
 <BaseLayout>
-  <article class='flex flex-col gap-5 p-1'>
-    <div class='flex flex-col gap-1'>
-      <h1>{post.data.title}</h1>
-      <small class='text-sm text-secondary'>{formattedDate}</small>
-      {
-        post.data.description?.trim() && (
-          <p class='text-sm text-secondary'>{post.data.description.trim()}</p>
-        )
-      }
-    </div>
-    <div class='prose'>
-      <Content />
-    </div>
-  </article>
+  <ArticleLayout
+    title={post.data.title}
+    publishDate={post.data.publishDate}
+    description={post.data.description}
+  >
+    <Content />
+  </ArticleLayout>
 </BaseLayout>

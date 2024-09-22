@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleCard from "../../components/ArticleCard.astro";
+import BlogCard from "../../components/BlogCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getSlug } from "../../utils";
 
@@ -29,7 +29,7 @@ const sortedPosts = allBlogPosts
 
         return (
           <li>
-            <ArticleCard
+            <BlogCard
               name={post.data.title}
               url={`/blog/${getSlug(post.data.title)}/`}
               description={post.data.description}
