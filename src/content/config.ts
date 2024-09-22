@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
     description: z.string().optional(),
     publishDate: z.date(),
     isDraft: z.boolean().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
@@ -16,6 +17,7 @@ const learningsCollection = defineCollection({
     title: z.string(),
     publishDate: z.date(),
     isDraft: z.boolean().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 

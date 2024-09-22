@@ -11,17 +11,19 @@ type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]["props"];
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
 
-  return blogEntries.map((post) => ({
-    params: { slug: getSlug(post.data.title) },
-    props: { post },
-  }));
+  return blogEntries
+    .filter((post) => post.data.isDraft !== true)
+    .map((post) => ({
+      params: { slug: getSlug(post.data.title) },
+      props: { post },
+    }));
 }
 
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout>
+<BaseLayout title={post.data.title} description={post.data.description}>
   <ArticleLayout
     title={post.data.title}
     publishDate={post.data.publishDate}

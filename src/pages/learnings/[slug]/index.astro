@@ -11,17 +11,19 @@ type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]["props"];
 export async function getStaticPaths() {
   const allLearnings = await getCollection("learnings");
 
-  return allLearnings.map((learning) => ({
-    params: { slug: getSlug(learning.data.title) },
-    props: { learning },
-  }));
+  return allLearnings
+    .filter((learning) => learning.data.isDraft !== true)
+    .map((learning) => ({
+      params: { slug: getSlug(learning.data.title) },
+      props: { learning },
+    }));
 }
 
 const { learning } = Astro.props;
 const { Content } = await learning.render();
 ---
 
-<BaseLayout>
+<BaseLayout title={learning.data.title}>
   <ArticleLayout
     title={learning.data.title}
     publishDate={learning.data.publishDate}
