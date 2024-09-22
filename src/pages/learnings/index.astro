@@ -4,10 +4,10 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getSlug } from "../../utils";
 
-const allBlogPosts = await getCollection("blog");
+const allLearnings = await getCollection("learnings");
 
-const sortedPosts = allBlogPosts
-  .filter((post) => post.data.isDraft !== true)
+const sortedLearnings = allLearnings
+  .filter((learning) => learning.data.isDraft !== true)
   .sort(
     (a, b) =>
       new Date(b.data.publishDate).valueOf() -
@@ -18,9 +18,9 @@ const sortedPosts = allBlogPosts
 <BaseLayout>
   <ul class='flex flex-col gap-5'>
     {
-      sortedPosts.map((post) => {
+      sortedLearnings.map((learning) => {
         const formattedDate = new Date(
-          post.data.publishDate,
+          learning.data.publishDate,
         ).toLocaleDateString("en-us", {
           year: "numeric",
           month: "long",
@@ -30,9 +30,9 @@ const sortedPosts = allBlogPosts
         return (
           <li>
             <ArticleCard
-              name={post.data.title}
-              url={`/blog/${getSlug(post.data.title)}/`}
-              description={post.data.description}
+              name={learning.data.title}
+              url={`/learnings/${getSlug(learning.data.title)}/`}
+              description={learning.data.description}
               time={formattedDate}
             />
           </li>
