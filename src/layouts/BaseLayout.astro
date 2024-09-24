@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import MainHead from "../components/MainHead.astro";
+import { slide } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 
 type Props = {
   title?: string | undefined;
@@ -13,11 +15,12 @@ const { title, description } = Astro.props;
 <html lang='en'>
   <head>
     <MainHead title={title} description={description} />
+    <ViewTransitions />
   </head>
   <body>
     <div class='mx-auto flex max-w-xl flex-col gap-8 px-4 py-16'>
       <Header />
-      <main>
+      <main transition:animate={slide({ duration: 600 })}>
         <slot />
       </main>
     </div>
