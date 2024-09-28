@@ -1,12 +1,28 @@
 ---
 import NavLink from "./NavLink.astro";
+import { getCollection } from "astro:content";
+
+const allBlogPosts = await getCollection("blog");
+const allLearnings = await getCollection("learnings");
 ---
 
 <nav>
   <ul class='flex flex-wrap gap-3'>
     <li><NavLink url='/'>Timeline</NavLink></li>
-    <li><NavLink url='/blog'>Blog</NavLink></li>
-    <li><NavLink url='/learnings'>Learnings</NavLink></li>
+    {
+      allBlogPosts.length > 0 && (
+        <li>
+          <NavLink url='/blog'>Blog</NavLink>
+        </li>
+      )
+    }
+    {
+      allLearnings.length > 0 && (
+        <li>
+          <NavLink url='/learnings'>Learnings</NavLink>
+        </li>
+      )
+    }
     <li><NavLink url='/contact'>Contact</NavLink></li>
   </ul>
 </nav>
