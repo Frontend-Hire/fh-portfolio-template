@@ -1,8 +1,8 @@
 ---
+import LearningsCard from "@components/LearningsCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getSlug } from "@utils/slugs";
 import { getCollection } from "astro:content";
-import LearningsCard from "../../components/LearningsCard.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getSlug } from "../../utils";
 
 const allLearnings = await getCollection("learnings");
 
