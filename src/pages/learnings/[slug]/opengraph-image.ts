@@ -1,5 +1,6 @@
+import { LOADED_FONTS } from "@constants/fonts";
 import { generateImageResponse } from "@lib/opengraph-image";
-import { loadFont, Template } from "@utils/opengraph";
+import { Template } from "@utils/opengraph";
 import { getSlug } from "@utils/slugs";
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
@@ -27,15 +28,7 @@ export const GET: APIRoute = async function get({ params }) {
 
   if (!learning) return new Response("Page not found", { status: 404 });
 
-  const robotoLight = loadFont({ fontName: "Roboto-Light", fileType: "ttf" });
-  const robotoBlack = loadFont({ fontName: "Roboto-Black", fileType: "ttf" });
-  const robotoMedium = loadFont({ fontName: "Roboto-Medium", fileType: "ttf" });
-
   return generateImageResponse(Template(learning), {
-    fonts: [
-      { name: "RobotoLight", data: robotoLight, style: "normal" },
-      { name: "RobotoBlack", data: robotoBlack, style: "normal" },
-      { name: "RobotoMedium", data: robotoMedium, style: "normal" },
-    ],
+    fonts: LOADED_FONTS,
   });
 };

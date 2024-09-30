@@ -1,6 +1,7 @@
 import satori, { type Font } from "satori";
 import { html } from "satori-html";
 import sharp from "sharp";
+
 type ImageResponseOptions = {
   fonts?: Font[];
 };
@@ -15,7 +16,6 @@ export async function generateImageResponse(
     height: 630,
     fonts: [...(options.fonts || [])],
   });
-
   const pngBuffer = await sharp(Buffer.from(svg)).png().toBuffer();
 
   return new Response(pngBuffer, {
