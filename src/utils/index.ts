@@ -2,7 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import slugify from "slugify";
 import { readFileSync } from "fs";
-import type { IPost, IFont } from "../interface/interface";
+import type { IPost, IFont } from "./opengraph";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

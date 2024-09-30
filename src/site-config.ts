@@ -14,6 +14,16 @@ type SiteConfig = {
   }[];
 };
 
+type TwitterConfig = {
+  url: string;
+  handleName: string;
+};
+
+export const TWITTER_CONFIG: TwitterConfig = {
+  url: "https://twitter.com/thisisyhr",
+  handleName: "thisisyhr",
+};
+
 export const SITE_CONFIG: SiteConfig = {
   name: "Hruthik Reddy",
   headlineOne: "Mostly a Software Engineer.",

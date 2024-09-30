@@ -1,11 +1,11 @@
 import satori, { type Font } from "satori";
 import { html } from "satori-html";
 import sharp from "sharp";
-interface ImageResponseOptions {
+type ImageResponseOptions = {
   fonts?: Font[];
-}
+};
 
-export async function GenerateImageResponse(
+export async function generateImageResponse(
   template: string,
   options: ImageResponseOptions,
 ) {
