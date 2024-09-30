@@ -27,7 +27,7 @@ export function Template(post: IPost) {
         <header tw="flex w-full">
           <p style="font-size:34px;font-family:RobotoBlack">Hruthik</p>  
         </header>
-        <main tw="flex grow pb-2 flex-col items-left justify-end" >
+        <main tw="flex grow pb-2 flex-col items-start justify-end" >
               <p style="font-size:34px;font-family:RobotoMedium">
                     ${title}
               </p>
