@@ -1,8 +1,8 @@
 ---
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getSlug } from "@utils/slugs";
 import { getCollection } from "astro:content";
-import { getSlug } from "../../../utils";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 
 export const prerender = true;
 

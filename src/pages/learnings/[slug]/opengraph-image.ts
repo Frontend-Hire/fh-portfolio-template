@@ -1,7 +1,8 @@
-import { getCollection } from "astro:content";
+import { generateImageResponse } from "@lib/opengraph-image";
+import { loadFont, Template } from "@utils/opengraph";
+import { getSlug } from "@utils/slugs";
 import type { APIRoute } from "astro";
-import { getSlug, loadFont, Template } from "../../../utils";
-import { generateImageResponse } from "../../../lib/astro-opengraph-image";
+import { getCollection } from "astro:content";
 
 export const prerender = true;
 
