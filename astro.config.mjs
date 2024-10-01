@@ -7,7 +7,8 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   // TODO: Set your site URL https://docs.astro.build/en/guides/integrations-guide/sitemap/#usage
-  // site: 'https://example.com',
+  // TODO: Get this from the site-config
+  site: 'https://portfolio.frontendhire.com/',
   integrations: [tailwind(), sitemap()],
   markdown: {
     shikiConfig: {
