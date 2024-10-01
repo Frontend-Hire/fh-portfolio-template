@@ -1,13 +1,17 @@
 ---
 import { SITE_CONFIG } from "../site-config";
 import Navigation from "./Navigation.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header class='flex flex-col gap-8'>
-  <div>
-    <a class='font-bold' href='/'>{SITE_CONFIG.name}</a>
-    <p>{SITE_CONFIG.headlineOne}</p>
-    {SITE_CONFIG.headlineTwo && <p>{SITE_CONFIG.headlineTwo}</p>}
+  <div class='flex flex-row gap-8'>
+    <div>
+      <a class='font-bold' href='/'>{SITE_CONFIG.name}</a>
+      <p>{SITE_CONFIG.headlineOne}</p>
+      {SITE_CONFIG.headlineTwo && <p>{SITE_CONFIG.headlineTwo}</p>}
+    </div>
+    <ThemeIcon />
   </div>
   <Navigation />
 </header>

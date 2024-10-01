@@ -1,8 +1,22 @@
 :root {
   --color-primary: 0deg 0% 0%;
   --color-secondary: 0deg 0% 24%;
-
   --color-hover: 0deg 0% 97%;
+}
+
+.dark {
+  --color-primary: 0deg 0% 15%; /* Dark mode primary color */
+  --color-secondary: 0deg 0% 85%; /* Dark mode secondary color */
+  --color-hover: 0deg 0% 60%; /* Dark mode hover color */
+}
+
+html.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
 
 html {
