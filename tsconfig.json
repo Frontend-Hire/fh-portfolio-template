@@ -11,6 +11,8 @@
       "@types": ["src/types"],
       "@data/*": ["src/data/*"],
       "@src/*": ["src/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }

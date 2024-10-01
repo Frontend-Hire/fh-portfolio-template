@@ -36,3 +36,28 @@ const twitterHandle = TWITTER_CONFIG.handleName;
 <title>{title}</title>
 
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+<script is:inline>
+  function getInitialTheme() {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      return storedTheme;
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+
+  function setTheme(theme) {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }
+
+  // Set initial theme
+  setTheme(getInitialTheme());
+
+  // Prevent FOUC after view transition
+  document.addEventListener("astro:after-swap", () =>
+    setTheme(getInitialTheme()),
+  );
+</script>

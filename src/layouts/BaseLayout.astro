@@ -2,6 +2,7 @@
 import Header from "@components/Header.astro";
 import MainHead from "@components/MainHead.astro";
 import { slide, ViewTransitions } from "astro:transitions";
+import ThemeToggle from "@components/ThemeToggle";
 
 type Props = {
   title?: string | undefined;
@@ -16,12 +17,15 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
     <ViewTransitions fallback='swap' />
   </head>
-  <body>
+  <body
+    class='bg-white text-black transition-colors duration-700 dark:bg-gray-900 dark:text-white'
+  >
     <div class='mx-auto flex max-w-xl flex-col gap-8 px-4 py-16'>
       <Header />
       <main transition:animate={slide({ duration: 600 })}>
         <slot />
       </main>
+      <ThemeToggle client:load />
     </div>
   </body>
 </html>
