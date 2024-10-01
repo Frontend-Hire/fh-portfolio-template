@@ -14,9 +14,9 @@ const formattedDate = new Date(publishDate).toLocaleDateString("en-us", {
 });
 ---
 
-<article class='prose'>
+<article class='prose dark:prose-invert dark:text-secondary-dark'>
   <h1 class='mb-1 text-2xl'>{title}</h1>
-  <time class='m-0 text-sm text-secondary'>{formattedDate}</time>
+  <time class='m-0 text-sm text-secondary-dark'>{formattedDate}</time>
   {description.trim() && <p>{description.trim()}</p>}
   <slot />
 </article>

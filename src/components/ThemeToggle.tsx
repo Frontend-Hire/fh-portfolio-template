@@ -31,12 +31,12 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={handleToggle}
-      className='fixed bottom-6 right-8 rounded-full bg-gray-200 p-2 shadow-lg dark:bg-gray-700'
+      className='fixed bottom-6 right-8 rounded-full bg-white p-2 shadow-lg transition-colors duration-300 hover:bg-hover dark:bg-secondary-dark dark:shadow-primary-dark dark:hover:bg-hover-dark'
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
     >
       {theme === "light" ? (
         <svg
-          className='h-6 w-6 text-gray-800'
+          className='h-6 w-6 text-primary'
           fill='none'
           stroke='currentColor'
           viewBox='0 0 24 24'
