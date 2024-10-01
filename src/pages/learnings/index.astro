@@ -16,27 +16,34 @@ const sortedLearnings = allLearnings
 ---
 
 <BaseLayout title='Learnings' description='All my learnings over the years!'>
-  <ul class='flex flex-col gap-5'>
-    {
-      sortedLearnings.map((learning) => {
-        const formattedDate = new Date(
-          learning.data.publishDate,
-        ).toLocaleDateString("en-us", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
+  {
+    sortedLearnings.length > 0 ? (
+      <ul class='flex flex-col gap-5'>
+        {sortedLearnings.map((learning) => {
+          const formattedDate = new Date(
+            learning.data.publishDate,
+          ).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
 
-        return (
-          <li>
-            <LearningsCard
-              name={learning.data.title}
-              url={`/learnings/${getSlug(learning.data.title)}/`}
-              time={formattedDate}
-            />
-          </li>
-        );
-      })
-    }
-  </ul>
+          return (
+            <li>
+              <LearningsCard
+                name={learning.data.title}
+                url={`/learnings/${getSlug(learning.data.title)}/`}
+                time={formattedDate}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    ) : (
+      <div>
+        <h2 class='mb-2 font-bold'>No Learnings Available</h2>
+        <p>Check back later for new insights and learnings!</p>
+      </div>
+    )
+  }
 </BaseLayout>
