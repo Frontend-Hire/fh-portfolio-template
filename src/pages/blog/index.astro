@@ -16,28 +16,35 @@ const sortedPosts = allBlogPosts
 ---
 
 <BaseLayout title='Blog' description='All my blog posts over the years!'>
-  <ul class='flex flex-col gap-5'>
-    {
-      sortedPosts.map((post) => {
-        const formattedDate = new Date(
-          post.data.publishDate,
-        ).toLocaleDateString("en-us", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
+  {
+    sortedPosts.length > 0 ? (
+      <ul class='flex flex-col gap-5'>
+        {sortedPosts.map((post) => {
+          const formattedDate = new Date(
+            post.data.publishDate,
+          ).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
 
-        return (
-          <li>
-            <BlogCard
-              name={post.data.title}
-              url={`/blog/${getSlug(post.data.title)}/`}
-              description={post.data.description}
-              time={formattedDate}
-            />
-          </li>
-        );
-      })
-    }
-  </ul>
+          return (
+            <li>
+              <BlogCard
+                name={post.data.title}
+                url={`/blog/${getSlug(post.data.title)}/`}
+                description={post.data.description}
+                time={formattedDate}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    ) : (
+      <div>
+        <h2 class='mb-2 font-bold'>No Blog Posts Available</h2>
+        <p>Check back later for new content!</p>
+      </div>
+    )
+  }
 </BaseLayout>
