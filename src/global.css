@@ -1,50 +1,26 @@
-:root {
-  --color-primary: 0deg 0% 0%;
-  --color-secondary: 0deg 0% 24%;
-  --color-hover: 0deg 0% 97%;
-  --color-hover-dark: 0deg 0% 30%;
-  --text-white-color: rgb(255, 255, 255);
-  --background-color-dark: rgb(0, 0, 0);
-  --tw-bg-opacity-dark: 0.4;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 0deg 0% 0%;
+    --color-secondary: 0deg 0% 24%;
+    --color-hover: 0deg 0% 97%;
+    --foreground: 0deg 0% 0%;
+    --background: 0deg 0% 100%;
+  }
+
+  .dark {
+    --color-hover: 0deg 0% 15%;
+    --color-secondary: 255deg 100% 100%;
+    --foreground: 0deg 0% 100%;
+    --background: 0deg 0% 0%;
+  }
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
-.lightThemeIcon {
-  fill: var(--background-color-dark);
-}
-
-.darkThemeIcon {
-  fill: transparent;
-}
-
-html.dark {
-  background-color: var(--background-color-dark);
-  color: var(--text-white-color);
-}
-
-.dark .hover\:bg-hover:hover {
-  background-color: hsl(var(--color-hover-dark) / var(--tw-bg-opacity--dark));
-}
-
-.dark .hover\:underline:hover {
-  text-decoration-line: underline;
-}
-
-.dark .text-secondary {
-  color: var(--text-white-color);
-}
-
-.dark .decoration-secondary {
-  text-decoration-color: var(--text-white-color);
-}
-
-.dark .lightThemeIcon {
-  fill: transparent;
-}
-
-.dark .darkThemeIcon {
-  fill: var(--text-white-color);
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
 }

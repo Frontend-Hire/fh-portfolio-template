@@ -1,3 +1,7 @@
+---
+
+---
+
 <button id='themeToggle'>
   <svg width='24px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <path
@@ -12,6 +16,25 @@
     ></path>
   </svg>
 </button>
+<style>
+  #themeToggle {
+    border: 0;
+    background: none;
+  }
+  .lightThemeIcon {
+    fill: black;
+  }
+  .darkThemeIcon {
+    fill: transparent;
+  }
+
+  :global(.dark) .lightThemeIcon {
+    fill: transparent;
+  }
+  :global(.dark) .darkThemeIcon {
+    fill: white;
+  }
+</style>
 <script>
   const setToggleListener = () => {
     let toggleBtn = document.getElementById("themeToggle");
