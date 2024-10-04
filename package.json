@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && pagefind --site dist",
+    "predev": "astro build && pagefind --site dist && xcopy .\\dist\\pagefind .\\public\\pagefind\\ /E /I /Y",
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky"
@@ -36,6 +37,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
+    "pagefind": "^1.1.1",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.6"

@@ -1,0 +1,8 @@
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
+<script src='/pagefind/pagefind-ui.js' is:inline></script>
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    new PagefindUI({ element: "#search", showSubResults: true });
+  });
+</script>
+<div id='search' transition:persist></div>
