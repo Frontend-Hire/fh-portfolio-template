@@ -12,6 +12,7 @@ type SiteConfig = {
     name: string;
     url: string;
   }[];
+  enableSearch: boolean;
 };
 
 type TwitterConfig = {
@@ -86,4 +87,5 @@ export const SITE_CONFIG: SiteConfig = {
       url: "https://github.com/yaralahruthik",
     },
   ],
+  enableSearch: true,
 };
