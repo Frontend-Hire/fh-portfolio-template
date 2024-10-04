@@ -1,6 +1,13 @@
 ---
 import NavLink from "./NavLink.astro";
 import Search from "./Search.astro";
+
+import { SITE_CONFIG } from "@src/site-config";
+
+const currentPath = Astro.url.pathname;
+const showSearch = ["/blog", "/learnings"].some(
+  (path) => currentPath === path || currentPath.startsWith(`${path}/`),
+);
 ---
 
 <nav class='flex flex-col gap-3'>
@@ -10,5 +17,5 @@ import Search from "./Search.astro";
     <li><NavLink url='/learnings'>Learnings</NavLink></li>
     <li><NavLink url='/contact'>Contact</NavLink></li>
   </ul>
-  <Search />
+  {SITE_CONFIG.enableSearch && showSearch && <Search />}
 </nav>

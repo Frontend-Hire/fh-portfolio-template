@@ -1,8 +1,20 @@
 <link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
 <script src='/pagefind/pagefind-ui.js' is:inline></script>
 <script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
-    new PagefindUI({ element: "#search", showSubResults: true });
-  });
+  function initSearch() {
+    const existingSearch = document.querySelector(".pagefind-ui");
+    if (existingSearch) {
+      return;
+    }
+
+    if (document.querySelector("#search")) {
+      new PagefindUI({
+        element: "#search",
+        showSubResults: true,
+      });
+    }
+  }
+
+  document.addEventListener("astro:page-load", initSearch);
 </script>
-<div id='search' transition:persist></div>
+<div id='search'></div>
