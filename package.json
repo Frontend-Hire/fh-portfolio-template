@@ -10,8 +10,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist",
-    "predev": "astro build && pagefind --site dist && xcopy .\\dist\\pagefind .\\public\\pagefind\\ /E /I /Y",
+    "build": "astro check && astro build && pagefind --site dist --output-path ./public/pagefind",
+    "predev": "pnpm build",
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky"
