@@ -36,3 +36,16 @@ const twitterHandle = TWITTER_CONFIG.handleName;
 <title>{title}</title>
 
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+<!-- Pagefind Search -->
+<link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
+<script src='/pagefind/pagefind-ui.js' is:inline></script>
+<script is:inline>
+  function initSearch() {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+    });
+  }
+  document.addEventListener("astro:page-load", initSearch);
+</script>
