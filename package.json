@@ -9,9 +9,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
+    "predev": "pnpm build && pagefind --site dist --output-path ./public/pagefind",
     "start": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist --output-path ./public/pagefind",
-    "predev": "pnpm build",
+    "build": "astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky"
