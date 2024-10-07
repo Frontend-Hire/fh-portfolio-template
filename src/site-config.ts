@@ -87,5 +87,5 @@ export const SITE_CONFIG: SiteConfig = {
       url: "https://github.com/yaralahruthik",
     },
   ],
-  enableSearch: true,
+  enableSearch: import.meta.env.ENABLE_SEARCH === "true" ? true : false,
 };
