@@ -23,6 +23,15 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
+## SITE CONFIGURATION
+
+Update the `src/site-config.ts` file to configure your site.
+
+These features are enabled by default and can be disabled using the `enableDarkMode` and `enableTags` flags.
+
+- `enableDarkMode` - Enables the dark mode toggle in the header.
+- `enableTags` - Adds a tag list to each post.
+
 ## Guide: Removing `/blog` and `/learnings` Routes
 
 This guide will walk you through the process of completely removing the `/blog` and `/learnings` routes from your project.

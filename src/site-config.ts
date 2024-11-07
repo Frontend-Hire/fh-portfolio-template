@@ -12,6 +12,8 @@ type SiteConfig = {
     name: string;
     url: string;
   }[];
+  enableDarkMode: boolean;
+  enableTags: boolean;
 };
 
 type TwitterConfig = {
@@ -86,4 +88,6 @@ export const SITE_CONFIG: SiteConfig = {
       url: "https://github.com/yaralahruthik",
     },
   ],
+  enableDarkMode: true,
+  enableTags: true,
 };

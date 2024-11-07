@@ -6,6 +6,10 @@ type Props = {
 const { url } = Astro.props;
 ---
 
-<a target='_blank' class='underline underline-offset-4' href={url}>
+<a
+  target='_blank'
+  class='underline underline-offset-4 hover:text-hover'
+  href={url}
+>
   <slot />
 </a>
