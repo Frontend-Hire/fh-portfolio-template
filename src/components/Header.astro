@@ -11,9 +11,13 @@ import ThemeIcon from "./ThemeIcon.astro";
       <p>{SITE_CONFIG.headlineOne}</p>
       {SITE_CONFIG.headlineTwo && <p>{SITE_CONFIG.headlineTwo}</p>}
     </div>
-    <div>
-      <ThemeIcon />
-    </div>
+    {
+      SITE_CONFIG.enableDarkMode && (
+        <div>
+          <ThemeIcon />
+        </div>
+      )
+    }
   </div>
   <Navigation />
 </header>

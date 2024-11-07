@@ -1,11 +1,14 @@
 ---
+import { SITE_CONFIG } from "@src/site-config";
+
 type Props = {
   title: string;
   publishDate: Date;
   description?: string;
+  tags?: string[];
 };
 
-const { title, publishDate, description = "" } = Astro.props;
+const { title, publishDate, description = "", tags = [] } = Astro.props;
 
 const formattedDate = new Date(publishDate).toLocaleDateString("en-us", {
   year: "numeric",
@@ -16,7 +19,20 @@ const formattedDate = new Date(publishDate).toLocaleDateString("en-us", {
 
 <article class='prose dark:prose-invert'>
   <h1 class='mb-1 text-2xl'>{title}</h1>
-  <time class='m-0 text-sm text-secondary'>{formattedDate}</time>
+  <span
+    class='not-prose flex flex-wrap items-center gap-2 text-sm text-secondary'
+  >
+    <time>{formattedDate}</time>
+    {
+      SITE_CONFIG.enableTags && tags.length > 0 && (
+        <ul class='flex flex-wrap items-center gap-1'>
+          {tags.map((tag) => (
+            <li>#{tag}</li>
+          ))}
+        </ul>
+      )
+    }
+  </span>
   {description.trim() && <p>{description.trim()}</p>}
   <slot />
 </article>
