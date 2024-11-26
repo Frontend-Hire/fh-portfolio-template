@@ -2,6 +2,8 @@ type SiteConfig = {
   name: string;
   headlineOne: string;
   headlineTwo?: string;
+  defaultTitle: string;
+  defaultDescription: string;
   timeline: {
     name: string;
     url: string;
@@ -28,8 +30,11 @@ export const TWITTER_CONFIG: TwitterConfig = {
 
 export const SITE_CONFIG: SiteConfig = {
   name: "Hruthik Reddy",
-  headlineOne: "Mostly a Software Engineer.",
+  headlineOne: "Mostly a Product Generalist.",
   headlineTwo: "Sometimes a Nature Photographer.",
+  defaultTitle: "Frontend Hire: Free Portfolio Template",
+  defaultDescription:
+    "A free template that you can use to build your portfolio in minutes.",
   timeline: [
     {
       name: "withYHR",

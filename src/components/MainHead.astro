@@ -1,6 +1,6 @@
 ---
 import "@src/global.css";
-import { TWITTER_CONFIG } from "@src/site-config";
+import { SITE_CONFIG, TWITTER_CONFIG } from "@src/site-config";
 
 type Props = {
   title?: string | undefined;
@@ -8,8 +8,8 @@ type Props = {
 };
 
 const {
-  title = "Frontend Hire: Free Portfolio Template",
-  description = "A free template that you can use to build your portfolio in minutes.",
+  title = SITE_CONFIG.defaultTitle,
+  description = SITE_CONFIG.defaultDescription,
 } = Astro.props;
 const urlStr = Astro.url.toString();
 const urlWithTrailingSlash = urlStr.endsWith("/") ? urlStr : urlStr + "/";
