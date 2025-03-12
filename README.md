@@ -10,20 +10,16 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-##Content guidelines:  Differentiating "Blogs" and "Learnings" Sections
+## Content guidelines:  Differentiating "Blogs" and "Learnings" Sections
 
-## Purpose
-This guide explains the differences between the "Blogs" and "Learnings" sections, helping you decide the appropriate category for your content.
+### What Are "Blogs"?
 
----
-
-## What Are "Blogs"?
 The "Blogs" section is ideal for long-form, detailed content on various topics, such as:
   - Technical tutorials or guides
   - Project case studies
   - Detailed personal reflections or experiences
 
-### Use Cases
+#### Use Cases
 1. **Tutorials and Guides**  
    Use this section to write comprehensive, step-by-step instructions for solving a problem or implementing a feature.
    *Example:*  
@@ -42,15 +38,13 @@ The "Blogs" section is ideal for long-form, detailed content on various topics, 
    - Title: *"Improving Website Performance: A Case Study with Astro"*  
    - Content: Highlights optimization techniques and measurable results.
 
----
-
-## What Are "Learnings"?
+### What Are "Learnings"?
 The "Learnings" section is best for short, informal, and reflective content that focus on personal development insights, daily learning experiences, or quick updates.This section could include:
   - Tools and Resources Discovered
   - Personal goals and progress
   - Quick coding challenges or small experiments
 
-### Use Cases
+#### Use Cases
 1. **Tools and Resources Discovered**  
    Share tools, libraries, or resources that helped you and explain their benefits.
    *Example:*  
@@ -69,8 +63,6 @@ The "Learnings" section is best for short, informal, and reflective content that
    - Title: *"A Fun Challenge: Reverse a String in Python"*  
    - Content: I solved a LeetCode challenge to reverse a string using slicing. My one-liner solution: reversed_string = string[::-1].
 
----
-
 ## Comparison Table
 
 | Feature          | Blogs                            | Learnings                       |
@@ -79,8 +71,6 @@ The "Learnings" section is best for short, informal, and reflective content that
 | **Tone**         | Formal, detailed                | Casual, reflective             |
 | **Examples**     | Tutorials, thought pieces       | Tips, insights, milestones     |
 | **Use Cases**    | Case studies, in-depth guides   | Personal reflections, updates  |
-
----
 
 ## Commands
 
