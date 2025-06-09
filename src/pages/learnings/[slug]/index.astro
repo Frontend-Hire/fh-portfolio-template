@@ -21,9 +21,10 @@ export async function getStaticPaths() {
 
 const { learning } = Astro.props;
 const { Content } = await learning.render();
+const { canonicalUrl } = learning.data;
 ---
 
-<BaseLayout title={learning.data.title}>
+<BaseLayout title={learning.data.title} canonicalUrl={canonicalUrl}>
   <ArticleLayout
     title={learning.data.title}
     publishDate={learning.data.publishDate}

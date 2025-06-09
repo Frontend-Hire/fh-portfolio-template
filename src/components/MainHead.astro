@@ -5,11 +5,13 @@ import { SITE_CONFIG, TWITTER_CONFIG } from "@src/site-config";
 type Props = {
   title?: string | undefined;
   description?: string | undefined;
+  canonicalUrl?: string | undefined;
 };
 
 const {
   title = SITE_CONFIG.defaultTitle,
   description = SITE_CONFIG.defaultDescription,
+  canonicalUrl = SITE_CONFIG.defaultCanonicalUrl,
 } = Astro.props;
 const urlStr = Astro.url.toString();
 const urlWithTrailingSlash = urlStr.endsWith("/") ? urlStr : urlStr + "/";
@@ -33,6 +35,8 @@ const twitterHandle = TWITTER_CONFIG.handleName;
 <meta name='twitter:description' content={description} />
 <meta name='twitter:image' content={opengraphImageUrl.toString()} />
 <link rel='sitemap' href='/sitemap-index.xml' />
+<link rel='sitemap' href='/sitemap-index.xml' />
+{canonicalUrl && <link rel='canonical' href={canonicalUrl} />}
 <title>{title}</title>
 
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />

@@ -21,9 +21,14 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const { canonicalUrl } = post.data;
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalUrl={canonicalUrl}
+>
   <ArticleLayout
     title={post.data.title}
     publishDate={post.data.publishDate}
