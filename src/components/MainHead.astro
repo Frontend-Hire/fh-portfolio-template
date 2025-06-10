@@ -11,7 +11,7 @@ type Props = {
 const {
   title = SITE_CONFIG.defaultTitle,
   description = SITE_CONFIG.defaultDescription,
-  canonicalUrl = SITE_CONFIG.defaultCanonicalUrl,
+  canonicalUrl,
 } = Astro.props;
 const urlStr = Astro.url.toString();
 const urlWithTrailingSlash = urlStr.endsWith("/") ? urlStr : urlStr + "/";

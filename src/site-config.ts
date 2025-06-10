@@ -4,7 +4,6 @@ type SiteConfig = {
   headlineTwo?: string;
   defaultTitle: string;
   defaultDescription: string;
-  defaultCanonicalUrl?: string;
   timeline: {
     name: string;
     url: string;
@@ -34,7 +33,6 @@ export const SITE_CONFIG: SiteConfig = {
   headlineOne: "Mostly a Product Generalist.",
   headlineTwo: "Sometimes a Nature Photographer.",
   defaultTitle: "Frontend Hire: Free Portfolio Template",
-  defaultCanonicalUrl: "https://frontendhire.com/",
   defaultDescription:
     "A free template that you can use to build your portfolio in minutes.",
   timeline: [
