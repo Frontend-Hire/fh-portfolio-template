@@ -8,6 +8,7 @@ const blogCollection = defineCollection({
     publishDate: z.date(),
     isDraft: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
+    canonicalUrl: z.string().url().optional(),
   }),
 });
 
@@ -18,6 +19,7 @@ const learningsCollection = defineCollection({
     publishDate: z.date(),
     isDraft: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
+    canonicalUrl: z.string().url().optional(),
   }),
 });
 

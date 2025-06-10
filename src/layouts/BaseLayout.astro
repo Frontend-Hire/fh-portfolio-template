@@ -8,14 +8,19 @@ import ThemeBlockingScript from "@src/scripts/theme-blocking-script.astro";
 type Props = {
   title?: string | undefined;
   description?: string | undefined;
+  canonicalUrl?: string | undefined;
 };
 
-const { title, description } = Astro.props;
+const { title, description, canonicalUrl } = Astro.props;
 ---
 
 <html lang='en'>
   <head>
-    <MainHead title={title} description={description} />
+    <MainHead
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+    />
     {SITE_CONFIG.enableDarkMode && <ThemeBlockingScript />}
     <ViewTransitions fallback='swap' />
   </head>
