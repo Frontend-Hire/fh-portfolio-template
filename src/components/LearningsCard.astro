@@ -8,11 +8,11 @@ type Props = {
 const { url, name, time } = Astro.props;
 ---
 
-<div class='flex flex-col gap-1 rounded p-1'>
+<div class='flex flex-col gap-1 rounded-sm p-1'>
   <h2>
-    <a class='underline underline-offset-4 hover:text-hover' href={url}>
+    <a class='hover:text-hover underline underline-offset-4' href={url}>
       {name}
     </a>
   </h2>
-  <small class='text-sm text-secondary'>{time}</small>
+  <small class='text-secondary text-sm'>{time}</small>
 </div>

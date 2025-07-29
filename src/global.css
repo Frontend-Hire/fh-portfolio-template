@@ -1,30 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@layer base {
-  :root {
-    --color-primary: 0deg 0% 0%;
-    --color-secondary: 0deg 0% 24%;
-    --color-hover: 0deg 0% 20%;
-    --foreground: 0deg 0% 0%;
-    --background: 0deg 0% 100%;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
 
-  .dark {
-    --color-hover: 0deg 0% 80%;
-    --color-secondary: 255deg 100% 100%;
-    --foreground: 0deg 0% 100%;
-    --background: 0deg 0% 8%;
-  }
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-hover: var(--color-hover);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
-html {
-  scrollbar-gutter: stable;
+:root {
+  --color-primary: oklch(0% 0 0);
+  --color-secondary: oklch(24% 0 0);
+  --color-hover: oklch(20% 0 0);
+  --foreground: oklch(0% 0 0);
+  --background: oklch(100% 0 0);
+}
+
+.dark {
+  --color-primary: oklch(100% 0 0);
+  --color-secondary: oklch(100% 0 0);
+  --color-hover: oklch(80% 0 0);
+  --foreground: oklch(100% 0 0);
+  --background: oklch(8% 0 0);
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
 }
