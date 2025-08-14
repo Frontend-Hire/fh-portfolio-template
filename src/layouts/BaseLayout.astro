@@ -1,7 +1,7 @@
 ---
 import Header from "@components/Header.astro";
 import MainHead from "@components/MainHead.astro";
-import { slide, ViewTransitions } from "astro:transitions";
+import { ClientRouter, slide } from "astro:transitions";
 import { SITE_CONFIG } from "@src/site-config";
 import ThemeBlockingScript from "@src/scripts/theme-blocking-script.astro";
 
@@ -22,7 +22,7 @@ const { title, description, canonicalUrl } = Astro.props;
       canonicalUrl={canonicalUrl}
     />
     {SITE_CONFIG.enableDarkMode && <ThemeBlockingScript />}
-    <ViewTransitions fallback='swap' />
+    <ClientRouter fallback='swap' />
   </head>
   <body>
     <div class='mx-auto flex max-w-xl flex-col gap-8 px-4 py-16'>
